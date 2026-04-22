@@ -12,10 +12,8 @@ body {
     background-color: #FFFFFF;
     padding-left: 80px;
     padding-right: 80px;
-}
-
-.header {
-    padding-bottom: 80px;
+    width: 1440px;
+    box-sizing: border-box;
 }
 
 .gray-text {
@@ -28,154 +26,8 @@ body {
     flex-direction: row;
 }
 
-.item-list-area {
-    width: 800px;
-}
-
-.item-list-header {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-end;
-    padding-bottom: 50px;
-}
-
-.item-list-title {
-    font-size: 44px;
-    padding-right: 20px;
-    margin: 0px;
-}
-
-.item-list-total-items {
-    font-size: 18px;
-    padding-bottom: 5px;
-    margin: 0px;
-}
-
-.clear-items {
-    margin: 0px;
-    padding-bottom: 5px;
-    text-align: right;
-    font-size: 14px;
-    flex: 1;
-}
-
-.item-list {
-    display: flex;
-    flex-direction: column;
-}
-
-.item-row {
-    display: flex;
-    flex-direction: row;
-    border-bottom: 1px solid #C4C4C4;
-    margin-bottom: 25px;
-}
-.item-row:last-child {
-    border-bottom: none;
-    margin-bottom: 0;
-}
-
-.item-info {
+.cart{
     display: flex;
     flex-direction: row;
 }
 
-.item-row div {
-    flex-grow: 1;
-}
-
-.item-image-wrap {
-    /* padding-left: 15px;
-    padding-bottom: 20px; */
-    align-self: center;
-
-}
-
-.item-image {
-    width: 100px;
-    height: 100px;
-}
-
-.item-text-info p {
-    margin: 0px;
-    margin-bottom: 10px;
-}
-
-.item-name {
-    font-size: 16px;
-}
-
-.item-description {
-    font-size: 12px;
-    width: 265px;
-}
-
-.item-article {
-    font-size: 14px;
-}
-
-.quantity-area {
-    display: flex;
-    flex-direction: column;
-    align-self: center;
-    justify-content: center;
-    align-items: center; 
-    gap: 8px;
-}
-
-.quantity-controls {
-    display: flex;
-    flex-direction: row;
-    width: 100px;
-}
-
-.quantity-controls>* {
-    text-align: center;
-    background-color: #F6F8FA;
-    border: 0;
-    height: 34px;
-    width: 34px;
-    font-size: 14px;
-}
-
-.quantity {
-
-    margin-left: 2px;
-    margin-right: 2px;
-    justify-content: center;
-    display: flex;
-    align-items: center;
-
-}
-.quantity p{
-    margin: 0px;
-    
-}
-.decrease-quantity{
-    border-radius: 5px 0px 0px 5px;
-      transition: background-color 0.2s ease;
-}
-.increase-quantity{
-    border-radius: 0px 5px 5px 0px;
-      transition: background-color 0.2s ease;
-}
-
-.price-per {
-    font-size: 12px;
-    text-align: center;
-    height: 20px;
-}
-
-.price-per.invisible {
-    visibility: hidden;
-}
-.decrease-quantity:hover, .increase-quantity:hover{
-    cursor: pointer;
-    background-color: #e9ecef;
-
-}
-.item-total-price {
-    font-size: 18px;
-    align-self: center;
-    text-align: center;
-}

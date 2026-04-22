@@ -1,19 +1,21 @@
 <script setup>
+import CheckOut from '~/components/cart/CheckOut.vue';
 import ItemList from '~/components/cart/ItemList.vue';
 
 </script>
 
 <template>
-    <div class="header">
-
-    </div>
     <div class="main-area">
         <div class="nav-panel">
             <p>Главная</p>
-            <p>></p>
+            <img style="margin-left: 10px; margin-right: 10px;" src="/images/arrow.svg">
             <p class="gray-text">Корзина</p>
         </div>
-        <ItemList />
+        
+        <div class="cart">
+            <ItemList />
+            <CheckOut/>
+        </div>
     </div>
 </template>
 <style></style>

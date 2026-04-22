@@ -38,6 +38,10 @@ export const useCartStore = defineStore('cart', () => {
         return items.value.reduce((sum, item) => sum + item.quantity, 0)
     });
 
+    const totalItemTypes = computed(() => {
+        return items.value.length
+    });
+
     const totalPrice = computed(() => {
         return items.value.reduce((sum, item) => sum + (item.price * item.quantity), 0)
     });
@@ -52,15 +56,23 @@ export const useCartStore = defineStore('cart', () => {
 
     function decreaseQuantity(itemId: number) {
         const item = items.value.find(i => i.id === itemId);
+        if(item && item.quantity === 1){
+            deleteItem(itemId);
+            return;
+        }
         if (item && item.quantity > 0) {
             item.quantity--;
         }
+        
     }
     function deleteItem(itemId: number) {
         const index = items.value.findIndex(i => i.id === itemId);
         if (index !== -1) {
             items.value.splice(index, 1); // Actually remove the item
         }
+    }
+    function deleteAllItems(){
+        items.value = [];
     }
     function toggleInstallation() {
         isInstallationNeeded.value = !isInstallationNeeded.value
@@ -69,11 +81,13 @@ export const useCartStore = defineStore('cart', () => {
     return {
         items,
         totalItems,
+        totalItemTypes,
         totalPrice,
         isInstallationNeeded,
         increaseQuantity,
         decreaseQuantity,
         deleteItem,
+        deleteAllItems,
         toggleInstallation
     }
 })
