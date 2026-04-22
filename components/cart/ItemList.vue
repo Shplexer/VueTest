@@ -14,8 +14,7 @@ const {
     increaseQuantity,
     decreaseQuantity,
     deleteItem,
-    deleteAllItems,
-    toggleInstallation
+    deleteAllItems
 } = cartStore
 
 const formatPlural = (n, form1, form2, form5) => {
@@ -64,7 +63,6 @@ const getImageUrl = (picPath) => {
                             <button @click="decreaseQuantity(item.id)" class="decrease-quantity">−</button>
                             <div class="quantity">
                                 <p>
-                                    <!-- СДЕЛАТЬ ПОЛЕ ТЕКСТОВЫМ -->
                                     {{ Intl.NumberFormat('ru-RU').format(item.quantity) }}
                                 </p>
                             </div>
@@ -85,7 +83,10 @@ const getImageUrl = (picPath) => {
         </div>
         <div class="installation-area">
             <div class="installation-checkbox-wrap">
-                <input type="checkbox" class="installation-checkbox" @change="toggleInstallation" />
+                <input
+                type="checkbox"
+                v-model="isInstallationNeeded"
+                class="installation-checkbox" />
             </div>
             <div class="installation-icon-wrap">
                 <img src="/images/installation.svg" class="installation-icon">

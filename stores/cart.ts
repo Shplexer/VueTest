@@ -68,14 +68,11 @@ export const useCartStore = defineStore('cart', () => {
     function deleteItem(itemId: number) {
         const index = items.value.findIndex(i => i.id === itemId);
         if (index !== -1) {
-            items.value.splice(index, 1); // Actually remove the item
+            items.value.splice(index, 1);
         }
     }
     function deleteAllItems(){
         items.value = [];
-    }
-    function toggleInstallation() {
-        isInstallationNeeded.value = !isInstallationNeeded.value
     }
 
     return {
@@ -87,7 +84,6 @@ export const useCartStore = defineStore('cart', () => {
         increaseQuantity,
         decreaseQuantity,
         deleteItem,
-        deleteAllItems,
-        toggleInstallation
+        deleteAllItems
     }
 })

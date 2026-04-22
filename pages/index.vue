@@ -1,6 +1,7 @@
 <script setup>
 import CheckOut from '~/components/cart/CheckOut.vue';
 import ItemList from '~/components/cart/ItemList.vue';
+import ViewHistory from '~/components/ViewHistory.vue';
 
 </script>
 
@@ -15,6 +16,14 @@ import ItemList from '~/components/cart/ItemList.vue';
         <div class="cart">
             <ItemList />
             <CheckOut/>
+        </div>
+        <div class="viewHistory">
+            <ClientOnly>
+                <ViewHistory />
+               <template #fallback>
+                    <div>Загрузка...</div>
+                </template>
+            </ClientOnly>
         </div>
     </div>
 </template>
